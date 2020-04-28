@@ -8,21 +8,21 @@ import {credentials} from '../credentials'
 export class AuthenticationService {
   backendurl:string
   constructor(private http: HttpClient) {
-    this.backendurl="http://localhost:7000/"
+    this.backendurl="http://localhost:4000/employee"
    }
   
   //login service
-  login(empId:string,password:string){
+  login(staffId:string,password:string){
     let credentials:credentials={
-      employeeId:empId,
+      staffId:staffId,
       password:password
     }
-    return this.http.post(this.backendurl+'employee/verify',credentials)
+    return this.http.post(this.backendurl+'/verify',credentials)
   }
 
   //sign up service
   signUp(credentials){
-    return this.http.post(this.backendurl+'signup',credentials)
+    return this.http.post(this.backendurl+'',credentials)
   }
 
 }

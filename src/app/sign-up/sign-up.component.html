@@ -23,17 +23,8 @@
             <input type="text" id="lastname" class="form-control" formControlName="lastName"  />
           </div>
           <div class="form-group" >
-            <label for="fname">Employee Id</label>
-            <input type="text" id="empId" class="form-control" formControlName="empId"  />
-          </div>
-          <div class="form-group">
-            <label for="email" mt-8>Email</label>
-            <input type="text" id="email" class="form-control" formControlName="email" />
-            <span *ngIf="!email.valid && email.touched" class="help-block">Please enter a valid email!</span>
-          </div>
-          <div class="form-group">
-            <label for="dateOfBirth">Date Of Birth</label>
-            <input type="date" id="dateOfBirth" class="form-control" formControlName="dateOfBirth" />
+            <label for="fname">Staff Id</label>
+            <input type="text" id="staffId" class="form-control" formControlName="staffId"  />
           </div>
           <div formGroupName="passwordGroup">
             <div class="form-group">
@@ -52,16 +43,6 @@
                 password.valid && confirmPassword.valid && formGroup.invalid
               ">
               Passwords don't match!
-            </div>
-          </div>
-
-          <div>
-            <label for="geder">Gender</label>
-            <div class="radio" *ngFor="let gender of genders">
-              <label>
-                <input type="radio" [value]="gender" formControlName="gender" />{{ gender }}<i
-                  class="fab fa-facebook-square"></i>
-              </label>
             </div>
           </div>
           <button class="btn btn-primary btn-block" type="submit" [disabled]="!signUpForm.valid"
